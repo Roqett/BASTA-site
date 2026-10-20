@@ -1,0 +1,177 @@
+/* BASTA! — the public pages.
+ *
+ * No web fonts, no scripts, no CDN, no cookies, no trackers: every byte here
+ * comes from this folder. A privacy policy that loads somebody else's
+ * tracker would be its own joke.
+ *
+ * The palette is the app's own: paper, ink, aqua, gold.
+ */
+
+:root {
+  --paper: #F4EDE0;
+  --paper-deep: #E7DCC9;
+  --ink: #1E1A17;
+  --ink-soft: #5A5248;
+  --ink-faint: #8A8072;
+  --aqua: #0E8F84;
+  --gold: #C8A24A;
+  --rule: rgba(30, 26, 23, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  /* The system serif is New York on iOS and a fine serif elsewhere; the app's
+   * own face, without shipping a font file. */
+  font-family: "New York", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 19px;
+  line-height: 1.62;
+  /* The paper's own edge, a little darker at the foot. */
+  background-image: linear-gradient(180deg, #F8F2E7 0%, var(--paper) 42%, #EFE5D4 100%);
+  background-attachment: fixed;
+}
+
+main, .masthead, footer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+.masthead {
+  padding-top: 3.6rem;
+  padding-bottom: 1.2rem;
+  text-align: center;
+}
+
+.wordmark {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.tagline {
+  margin: 0.5rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+h2 {
+  margin: 2.6rem 0 0.7rem;
+  font-size: 1.42rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  margin: 1.6rem 0 0.35rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--aqua);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover { color: var(--ink); }
+
+.lede p { font-size: 1.12rem; }
+
+.note {
+  border-left: 2px solid var(--gold);
+  padding: 0.1rem 0 0.1rem 1rem;
+  color: var(--ink-soft);
+}
+
+.fine {
+  color: var(--ink-faint);
+  font-size: 0.86rem;
+}
+
+.lede .fine { margin-top: 1.4rem; }
+
+ul.promises {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+}
+
+ul.promises li { margin-bottom: 0.55rem; }
+
+.lenses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0.9rem;
+  margin: 1.1rem 0 0.4rem;
+}
+
+.lens {
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 0.9rem 0.95rem 1rem;
+  background: rgba(255, 253, 247, 0.5);
+}
+
+.lens .coin {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.lens .lens-name {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lens p:last-child {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.status {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.4rem;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 0.92rem;
+}
+
+footer p { margin: 0.3rem 0; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #17130F;
+    --paper-deep: #241D17;
+    --ink: #F1E8DA;
+    --ink-soft: #C3B7A6;
+    --ink-faint: #97897A;
+    --aqua: #4FD6C4;
+    --gold: #E0BC6A;
+    --rule: rgba(241, 232, 218, 0.16);
+  }
+  body {
+    background-image: linear-gradient(180deg, #1D1813 0%, var(--paper) 42%, #120E0B 100%);
+  }
+  .lens { background: rgba(255, 250, 240, 0.04); }
+}

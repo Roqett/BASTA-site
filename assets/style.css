@@ -20,6 +20,74 @@
 
 * { box-sizing: border-box; }
 
+/* **The hero, blown up, behind everything.**
+ *
+ * The founder's own card — the Dame di Bastoni — as a watermark so faint
+ * you only notice it when you are not looking for it. It is the app's own
+ * picture, so it belongs on the app's own pages, and it is fixed so it does
+ * not scroll away with the text.
+ *
+ * It is drawn with `background-attachment: fixed` on the body rather than as
+ * an element, so it costs no extra request and cannot be selected.
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -10%;
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center 22%;
+  background-repeat: no-repeat;
+  opacity: 0.07;
+  filter: saturate(0.85);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  body::before {
+    background-position: center 12%;
+    opacity: 0.09;
+  }
+}
+
+/* **The illustration break.**
+ *
+ * A hand-drawn scene, dropped between two paragraphs, the way a printer's
+ * block does. The founder is making these with a graphics harness; the
+ * convention is in `assets/illustrations/README.md`.
+ */
+figure.illustration {
+  margin: 2.2rem auto;
+  max-width: 22rem;
+  text-align: center;
+}
+
+figure.illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  opacity: 0.92;
+  mix-blend-mode: multiply;
+}
+
+figure.illustration figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+/* A plain rule, for a break that is not a picture. */
+.break-rule {
+  width: 4rem;
+  margin: 2rem auto;
+  border: 0;
+  border-top: 1px solid var(--gold);
+  opacity: 0.7;
+}
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
